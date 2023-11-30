@@ -11,34 +11,21 @@
 </head>
 <body class="font-mono h-screen h-fit" style="background-image: url('./wild-313508_1920.jpg')">
     
-    <div class="sticky top-0 flex flex-wrap items-center z-50">
-        <section class="mx-auto">
-          <nav class="flex bg-gray-900 text-white w-screen opacity-70">
-            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-              <a class="text-3xl font-bold font-heading hover:text-amber-400" style="font-family: Jost;" href="./index.html">
-                Counter Culture
-              </a>
-              <ul id="menu" class="hidden md:flex px-4 font-semibold font-heading space-x-12 pr-15" style="margin-left: auto;">
-                <li><a class="hover:text-amber-400" href="./index.html">Home</a></li>
-                <li><a class="hover:text-amber-400" href="./albums.html">Albums</a></li>
-                <li><a class="hover:text-amber-400" href="./gigs.html">Gigs</a></li>
-                <li><a class="hover:text-amber-400" href="./contact.html">Contact</a></li>
-              </ul>
-              <div class="hidden xl:flex items-center space-x-5">
-                <!-- Social Media Icons (add links when ready) -->
-              </div>
-            </div>
-      
-            <a class="xl:hidden flex mr-6 items-center" href="">
-              <!-- Responsive Icon -->
-            </a>
-            
-            <a class="navbar-burger self-center mr-12 xl:hidden" href="#menu">
-              <!-- Burger Icon -->
-            </a>
-          </nav>
-        </section>
-      </div>
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    <label for="menu-toggle" class="burger-menu fixed z-50 top-4 right-4 text-4xl cursor-pointer md:hidden">&#9776;</label>
+    
+    <nav class="navbar bg-gray-800 p-4 text-white flex justify-between items-center">
+        <a class="text-3xl font-bold font-heading hover:text-amber-400" style="font-family: Jost;" href="./index.html">
+            CounterCulture
+          </a>
+      <ul class="nav-list flex flex-col absolute right-0 top-16 p-4 md:p-0 bg-gray-800 z-50 md:flex md:flex-row md:top-6 md:right-6  space-x-4">
+        <li><a href="./index.html" class="hover:text-gray-300">Home</a></li>
+        <li><a href="./albums.html" class="hover:text-gray-300">Albums</a></li>
+        <li><a href="./gigs.html" class="hover:text-gray-300">Gigs</a></li>
+        <li><a href="./contact.html" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </nav>
+    
 
       <div>
         <h1 class="text-6xl text-center pt-5 pb-2 bg-white" style="font-family: Jost;">RECENT RELEASES</h1>
@@ -177,6 +164,25 @@
 
         </section>
       </div>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const menuToggle = document.getElementById('menu-toggle');
+          const burgerMenu = document.querySelector('.burger-menu');
+          const navList = document.querySelector('.nav-list');
+      
+          burgerMenu.addEventListener('click', function () {
+            // Toggle the state of the checkbox when the burger menu is clicked
+            menuToggle.checked = !menuToggle.checked;
+      
+            // Toggle the 'hidden' class on the navigation list based on the checkbox state
+            navList.classList.toggle('hidden', !menuToggle.checked);
+          });
+        });
+      </script>
+
+
 </body>
 
 <footer class="aboslute bottom-0 w-screen bg-gray-900 text-white py-4 text-center z-10">
