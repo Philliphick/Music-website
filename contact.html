@@ -93,22 +93,6 @@
         </div>
       </div>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const menuToggle = document.getElementById('menu-toggle');
-          const burgerMenu = document.querySelector('.burger-menu');
-          const navList = document.querySelector('.nav-list');
-      
-          burgerMenu.addEventListener('click', function () {
-            // Toggle the state of the checkbox when the burger menu is clicked
-            menuToggle.checked = !menuToggle.checked;
-      
-            // Toggle the 'hidden' class on the navigation list based on the checkbox state
-            navList.classList.toggle('hidden', !menuToggle.checked);
-          });
-        });
-      </script>
-
 </body>
 
 <footer class="bottom-0 w-screen bg-gray-900 text-white py-4 text-center z-10 my-6">
